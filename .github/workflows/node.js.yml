@@ -30,7 +30,7 @@ jobs:
         ELASTIC_USER_PWD: ${{ secrets.ELASTIC_USER_PWD }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm version patch
+    - run: npm version patch --no-git-tag-version
     - run: npm list --json
     - run: echo "$ELASTIC_USER_PWD"
     - run: echo ${{secrets.ELASTIC_USER_PWD}}
