@@ -35,4 +35,4 @@ jobs:
     - run: echo ${{secrets.ELASTIC_USER_PWD}}
     - run: |
         npmlsv=$(npm list --json) && 
-        curl --location 'https://$ELASTIC_USER_PWD@demo-591693139.us-east-1.bonsaisearch.net:443/npmls/_doc' --header 'Content-Type: application/json' --data-raw "$npmlsv"
+        curl --location 'https://${{secrets.ELASTIC_USER_PWD}}@demo-591693139.us-east-1.bonsaisearch.net:443/npmls/_doc' --header 'Content-Type: application/json' --data-raw "$npmlsv"
